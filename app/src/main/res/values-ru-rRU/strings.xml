@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Поиск</string>
+    <string name="favourite">Избранное</string>
+    <string name="main">Главная</string>
+    <string name="popularity">Популярность</string>
+    <string name="upcoming">Ожидаемые</string>
+    <string name="top_rated">Рейтинг</string>
+    <string name="name">Название</string>
+    <string name="release_date">Дата выпуска</string>
+    <string name="overview">Обзор</string>
+    <string name="actors">Актеры</string>
+    <string name="recommended">Рекомендуемые</string>
+    <string name="poster">Постер</string>
+    <string name="play_video">Воспроизвести видео</string>
+</resources>

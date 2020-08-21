@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6f689b</color>
+    <color name="colorPrimaryDark">#423d6d</color>
+    <color name="colorPrimaryLight">#9e96cc</color>
+    <color name="colorAccent">#05D582</color>
+    <color name="color_white">#ffffff</color>
+    <color name="colorSecondary">#ffca28</color>
+<!--    <color name="colorSecondary">#8ac937</color>-->
+    <color name="textColorSecondary">#3f2b68</color>
+    <color name="textColorPrimary">#291246</color>
+    <color name="colorBackground">#EFE7F8</color>
+    <color name="toolbarIconColor">@color/color_white</color>
+<!--    <color name="toolbarIconColorfv">#8ac937</color>-->
+    <color name="textInputOutlineColor">@color/textColorSecondary</color>
+</resources>

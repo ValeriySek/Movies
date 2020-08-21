@@ -1,0 +1,88 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnPrimary">@color/colorSecondary</item>
+
+        <item name="colorPrimaryVariant">@color/colorSecondary</item>
+        <item name="colorOnPrimarySurface">@color/colorSecondary</item>
+        <item name="tabIndicatorColor">@color/colorSecondary</item>
+        <item name="colorControlHighlight">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/colorSecondary</item>
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorOnSurface">@color/colorPrimaryLight</item>
+<!--        <item name="colorPrimarySurface">@color/colorSecondary</item>-->
+<!--        <item name="colorSecondaryVariant">@color/colorSecondary</item>-->
+<!--        <item name="android:colorControlActivated">@color/colorSecondary</item>-->
+<!--        <item name="colorSurface">@color/colorPrimary</item>-->
+        <item name="android:colorBackground">@color/colorBackground</item>
+
+        <item name="materialCardViewStyle">@style/Widget.AppTheme.MaterialCardView</item>
+        <item name="ratingBarStyle">@style/AppTheme.RatingBar</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.AppTheme.SmallComponent</item>
+
+        <item name="chipStyle">@style/Widget.App.Chip</item>
+    </style>
+
+    <style name="Widget.App.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/background_tint</item>
+        <item name="android:textColor">@color/text_tint</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <style name="Widget.AppTheme.MaterialCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.AppTheme.MaterialCardView</item>
+    </style>
+
+    <style name="ShapeAppearance.AppTheme.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.AppTheme.MaterialCardView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="AppTheme.RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:colorControlNormal">@color/colorSecondary</item>
+    </style>
+    
+    <style name="Widget.AppTheme.Button.TextButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="Widget.AppTheme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="backgroundTint">@color/colorBackground</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    
+    <style name="Widget.AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="hintTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.HintText</item>
+        <item name="hintTextColor">@color/colorBackground</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="boxStrokeColor">@color/colorBackground</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    
+    <style name="Widget.AppTheme.Backdrop" parent="">
+        <item name="android:background">?attr/colorAccent</item>
+    </style>
+</resources>
