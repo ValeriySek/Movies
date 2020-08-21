@@ -9,7 +9,7 @@
   * Room
   * ViewModel
   * Picasso
-  * Retrofit2
+  * Retrofit
   * RxJava2
   * Gson
   
