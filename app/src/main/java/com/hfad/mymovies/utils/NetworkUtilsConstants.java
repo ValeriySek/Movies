@@ -1,6 +1,6 @@
 package com.hfad.mymovies.utils;
 
-public class NetworkUtils {
+public class NetworkUtilsConstants {
 
     private static final String BASE_URL = "https://api.themoviedb.org/3/discover/movie";
     private static final String BASE_URL_VIDEOS = "https://api.themoviedb.org/3/movie/%s/videos";
@@ -17,6 +17,7 @@ public class NetworkUtils {
 
     public static final String BASE_POSTER_URL = "https://image.tmdb.org/t/p/";
     public static final String SMALL_POSTER_SIZE = "w185";
+    public static final String MEDIUM_POSTER_SIZE = "w342";
     public static final String BIG_POSTER_SIZE = "w500";
 
 }

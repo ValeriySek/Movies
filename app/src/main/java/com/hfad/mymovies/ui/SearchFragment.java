@@ -27,6 +27,7 @@ public class SearchFragment extends Fragment {
 
     private SearchFragmentViewModel mViewModel;
     private MovieAdapter mMovieAdapter;
+    private FragmentSearchBinding mBinding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +39,13 @@ public class SearchFragment extends Fragment {
 
         binding.rvSearch.setAdapter(mMovieAdapter);
 
-        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        setListeners();
+
+        return binding.getRoot();
+    }
+
+    private void setListeners(){
+        mBinding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 String encoder = "";
@@ -57,14 +64,7 @@ public class SearchFragment extends Fragment {
                 return false;
             }
         });
-
-        return binding.getRoot();
     }
-
-    private void subscribeUi(){
-
-    }
-
 
     private void loadData(String name){
         mViewModel.searchMovie(name).observe(getViewLifecycleOwner(), new Observer<List<MovieDiscover>>() {

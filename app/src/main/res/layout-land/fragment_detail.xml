@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="favouriteMovie"
+            type="com.hfad.mymovies.data.models.FavouriteMovie" />
+
+        <variable
+            name="isFavourite"
+            type="boolean" />
+
+        <variable
+            name="callback"
+            type="com.hfad.mymovies.ui.DetailFragment.Callback" />
+
+        <variable
+            name="movie"
+            type="com.hfad.mymovies.data.models.Movie" />
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MergeRootFrame"
+        tools:context=".ui.DetailFragment">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="72dp">
+
+                <ImageView
+                    android:id="@+id/imageViewBigPoster"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:minHeight="400dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:loadBigImage="@{isFavourite ? favouriteMovie.posterPath : movie.posterPath}" />
+
+                <TextView
+                    android:id="@+id/textViewTitle2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="@{isFavourite ? favouriteMovie.title : movie.title}"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Академия Амбрелла" />
+
+                <TextView
+                    android:id="@+id/textViewOriginalTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@{isFavourite ? favouriteMovie.originalTitle : movie.originalTitle}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTitle2"
+                    tools:text="Academy Umbrella" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:getGenres="@{isFavourite ? favouriteMovie.genres : movie.genres}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewOriginalTitle" />
+
+
+                <TextView
+                    android:id="@+id/textViewReleaseData"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{isFavourite ? favouriteMovie.releaseDate : movie.releaseDate}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    tools:text="44/65/2564" />
+
+                <TextView
+                    android:id="@+id/textViewRating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="72dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingLeft="24dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@{String.valueOf(isFavourite ? favouriteMovie.voteAverage : movie.voteAverage)}"
+                    android:textColor="@color/color_white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="67%" />
+
+                <TextView
+                    android:id="@+id/textViewLableDescription"
+                    android:text="@string/overview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewBigPoster"
+                    style="@style/AppLabels" />
+
+                <TextView
+                    android:id="@+id/textViewOverview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{isFavourite ? favouriteMovie.overview : movie.overview}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewLableDescription" />
+
+                <TextView
+                    android:id="@+id/tvActors"
+                    style="@style/AppLabels"
+                    android:text="@string/actors"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewOverview" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabAddToFavourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:clickable="true"
+                    android:onClick="@{(v) -> callback.addOrDelete(movie, isFavourite)}"
+                    android:src="@{isFavourite ? @drawable/ic_baseline_delete_24 : @drawable/ic_baseline_add_24}"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewBigPoster"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewBigPoster"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewBigPoster" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvActors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvActors" />
+
+                <TextView
+                    style="@style/AppLabels"
+                    android:id="@+id/tvRecommendations"
+                    android:text="@string/recommended"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvActors" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRecommendations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRecommendations" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvRecommendations" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_round_corners"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

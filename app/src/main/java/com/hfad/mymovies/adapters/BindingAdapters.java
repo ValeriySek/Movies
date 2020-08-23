@@ -9,7 +9,7 @@ import android.widget.VideoView;
 import androidx.databinding.BindingAdapter;
 
 import com.hfad.mymovies.data.models.Genre;
-import com.hfad.mymovies.utils.NetworkUtils;
+import com.hfad.mymovies.utils.NetworkUtilsConstants;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class BindingAdapters {
     @BindingAdapter("loadSmallImage")
     public static void loadImageFromUrl(ImageView view, String imageUrl){
         if(imageUrl != null && !imageUrl.isEmpty()){
-            String url = NetworkUtils.BASE_POSTER_URL + NetworkUtils.SMALL_POSTER_SIZE + imageUrl;
+            String url = NetworkUtilsConstants.BASE_POSTER_URL + NetworkUtilsConstants.SMALL_POSTER_SIZE + imageUrl;
             Picasso.get().load(url).into(view);
         }
     }
@@ -27,8 +27,15 @@ public class BindingAdapters {
     @BindingAdapter("loadBigImage")
     public static void loadBigImg(ImageView view, String bigUrl){
         if(bigUrl != null && !bigUrl.isEmpty()){
-            String url =  NetworkUtils.BASE_POSTER_URL + NetworkUtils.BIG_POSTER_SIZE + bigUrl;
+            String url =  NetworkUtilsConstants.BASE_POSTER_URL + NetworkUtilsConstants.BIG_POSTER_SIZE + bigUrl;
                     Picasso.get().load(url).into(view);
+        }
+    }
+    @BindingAdapter("loadMediumImage")
+    public static void loadMediumImg(ImageView view, String bigUrl){
+        if(bigUrl != null && !bigUrl.isEmpty()){
+            String url =  NetworkUtilsConstants.BASE_POSTER_URL + NetworkUtilsConstants.MEDIUM_POSTER_SIZE + bigUrl;
+            Picasso.get().load(url).into(view);
         }
     }
 

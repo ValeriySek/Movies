@@ -100,7 +100,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
             }else if (mFragment.toString().contains("FavouriteFragment")){
                 return FavouriteFragmentDirections
                         .actionFavouriteFragmentToDetailFragment(mBinding.getMovieDiscover().getId());
-            } else if (mFragment.toString().contains("HomeFragment")){
+            } else if (mFragment.toString().contains("SearchFragment")){
                 return SearchFragmentDirections
                         .actionHomeFragmentToDetailFragment(mBinding.getMovieDiscover().getId());
             } else {

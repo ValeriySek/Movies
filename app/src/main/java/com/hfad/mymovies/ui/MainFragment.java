@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.hfad.mymovies.ui.MainFragmentDirections;
 import com.hfad.mymovies.R;
@@ -47,7 +48,6 @@ public class MainFragment extends Fragment {
 
         movieAdapter = new MovieAdapter(this);
         binding.recyclerViewPosters.setAdapter(movieAdapter);
-
         loadData();
         setCallback();
         setListeners();
