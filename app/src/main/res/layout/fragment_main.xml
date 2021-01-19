@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-        <variable
-            name="sort"
-            type="com.hfad.mymovies.utils.NetworkUtilsConstants" />
-
-        <variable
-            name="callback"
-            type="com.hfad.mymovies.ui.MainFragment.Callback" />
-
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.MainFragment">
@@ -71,7 +57,6 @@
                         android:id="@+id/chip4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="@{() -> callback.checkedChip(sort.SORT_BY_POPULARITY)}"
                         android:text="@string/popularity"
                         tools:text="Популярность" />
 
@@ -79,7 +64,6 @@
                         android:id="@+id/chip8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="@{() -> callback.checkedChip(sort.UPCOMING)}"
                         android:text="@string/upcoming"
                         tools:text="Ожидаемые" />
 
@@ -87,7 +71,6 @@
                         android:id="@+id/chip5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="@{() -> callback.checkedChip(sort.SORT_BY_TOP_RATED)}"
                         android:text="@string/top_rated"
                         tools:text="Рейтинг" />
 
@@ -95,7 +78,6 @@
                         android:id="@+id/chip6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="@{() -> callback.checkedChip(sort.SORT_BY_NAME)}"
                         android:text="@string/name"
                         tools:text="Название" />
 
@@ -103,7 +85,6 @@
                         android:id="@+id/chip7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="@{() -> callback.checkedChip(sort.SORT_BY_DATE)}"
                         android:text="@string/release_date"
                         tools:text="Дата выпуска" />
                 </com.google.android.material.chip.ChipGroup>
@@ -126,4 +107,3 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>

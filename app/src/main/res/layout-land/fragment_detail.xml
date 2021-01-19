@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="favouriteMovie"
-            type="com.hfad.mymovies.data.models.FavouriteMovie" />
-
-        <variable
-            name="isFavourite"
-            type="boolean" />
-
-        <variable
-            name="callback"
-            type="com.hfad.mymovies.ui.DetailFragment.Callback" />
-
-        <variable
-            name="movie"
-            type="com.hfad.mymovies.data.models.Movie" />
-    </data>
-
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="MergeRootFrame"
@@ -40,7 +19,7 @@
                 android:paddingBottom="72dp">
 
                 <ImageView
-                    android:id="@+id/imageViewBigPoster"
+                    android:id="@+id/detail_fragment_poster_iv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
@@ -48,16 +27,14 @@
                     android:scaleType="centerCrop"
                     app:layout_constraintEnd_toStartOf="@+id/guideline2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:loadBigImage="@{isFavourite ? favouriteMovie.posterPath : movie.posterPath}" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/textViewTitle2"
+                    android:id="@+id/detail_fragment_title_2_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:gravity="center"
-                    android:text="@{isFavourite ? favouriteMovie.title : movie.title}"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -66,40 +43,37 @@
                     tools:text="Академия Амбрелла" />
 
                 <TextView
-                    android:id="@+id/textViewOriginalTitle"
+                    android:id="@+id/detail_fragment_title_original_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="@{isFavourite ? favouriteMovie.originalTitle : movie.originalTitle}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewTitle2"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_fragment_title_2_tv"
                     tools:text="Academy Umbrella" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/detail_fragment_genre_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:getGenres="@{isFavourite ? favouriteMovie.genres : movie.genres}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewOriginalTitle" />
+                    app:layout_constraintTop_toBottomOf="@+id/detail_fragment_title_original_tv" />
 
 
                 <TextView
-                    android:id="@+id/textViewReleaseData"
+                    android:id="@+id/detail_fragment_release_date_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@{isFavourite ? favouriteMovie.releaseDate : movie.releaseDate}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_fragment_genre_tv"
                     tools:text="44/65/2564" />
 
                 <TextView
-                    android:id="@+id/textViewRating"
+                    android:id="@+id/detail_fragment_rating_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="72dp"
@@ -109,52 +83,48 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    android:text="@{String.valueOf(isFavourite ? favouriteMovie.voteAverage : movie.voteAverage)}"
                     android:textColor="@color/color_white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="67%" />
 
                 <TextView
-                    android:id="@+id/textViewLableDescription"
+                    android:id="@+id/detail_fragment_lable_description_tv"
                     android:text="@string/overview"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageViewBigPoster"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_fragment_poster_iv"
                     style="@style/AppLabels" />
 
                 <TextView
-                    android:id="@+id/textViewOverview"
+                    android:id="@+id/detail_fragment_overview_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
-                    android:text="@{isFavourite ? favouriteMovie.overview : movie.overview}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewLableDescription" />
+                    app:layout_constraintTop_toBottomOf="@+id/detail_fragment_lable_description_tv" />
 
                 <TextView
-                    android:id="@+id/tvActors"
+                    android:id="@+id/detail_fragment_actors_tv"
                     style="@style/AppLabels"
                     android:text="@string/actors"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textViewOverview" />
+                    app:layout_constraintTop_toBottomOf="@id/detail_fragment_overview_tv" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabAddToFavourite"
+                    android:id="@+id/detail_fragment_add_to_favourite_fab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:clickable="true"
-                    android:onClick="@{(v) -> callback.addOrDelete(movie, isFavourite)}"
-                    android:src="@{isFavourite ? @drawable/ic_baseline_delete_24 : @drawable/ic_baseline_add_24}"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageViewBigPoster"
-                    app:layout_constraintEnd_toEndOf="@+id/imageViewBigPoster"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewBigPoster" />
+                    app:layout_constraintBottom_toBottomOf="@+id/detail_fragment_poster_iv"
+                    app:layout_constraintEnd_toEndOf="@+id/detail_fragment_poster_iv"
+                    app:layout_constraintStart_toEndOf="@+id/detail_fragment_poster_iv" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvActors"
+                    android:id="@+id/detail_fragment_actors_rv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -162,17 +132,17 @@
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvActors" />
+                    app:layout_constraintTop_toBottomOf="@id/detail_fragment_actors_tv" />
 
                 <TextView
                     style="@style/AppLabels"
-                    android:id="@+id/tvRecommendations"
+                    android:id="@+id/detail_fragment_recommendations_tv"
                     android:text="@string/recommended"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rvActors" />
+                    app:layout_constraintTop_toBottomOf="@id/detail_fragment_actors_rv" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvRecommendations"
+                    android:id="@+id/detail_fragment_recommendations_rv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -180,18 +150,18 @@
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvRecommendations" />
+                    app:layout_constraintTop_toBottomOf="@id/detail_fragment_recommendations_tv" />
 
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvReviews"
+                    android:id="@+id/detail_fragment_reviews_rv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="false"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rvRecommendations" />
+                    app:layout_constraintTop_toBottomOf="@id/detail_fragment_recommendations_rv" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline2"
@@ -205,7 +175,7 @@
         </ScrollView>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/detail_fragment_back_arrow_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -215,4 +185,3 @@
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</layout>

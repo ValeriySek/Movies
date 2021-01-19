@@ -22,7 +22,7 @@ public class Movie extends MovieDiscover {
     @SerializedName("imdb_id")
     @Expose
     private String imdbId;
-//    @SerializedName("production_companies")
+    //    @SerializedName("production_companies")
 //    @Expose
 //    private List<ProductionCompany> productionCompanies = null;
 //    @SerializedName("production_countries")
