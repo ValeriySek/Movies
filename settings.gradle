@@ -1,3 +1,5 @@
+include ':f-movie-details'
+include ':base-feature'
 include ':domain'
 include ':app'
 rootProject.name='My Movies'
