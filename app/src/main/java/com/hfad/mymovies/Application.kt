@@ -6,5 +6,6 @@ import com.hfad.mymovies.di.DaggerApplicationComponent
 
 class Application: Application() {
 
-    val appComponentFactory = DaggerApplicationComponent.builder().applicationModule(ApplicationModule(this)).build()
+    val appComponentFactory = DaggerApplicationComponent
+            .builder().applicationModule(ApplicationModule(this)).build()
 }

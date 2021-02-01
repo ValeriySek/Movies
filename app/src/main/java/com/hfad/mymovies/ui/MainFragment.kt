@@ -11,6 +11,9 @@ import com.hfad.mymovies.MainActivity
 import com.hfad.mymovies.adapters.MovieAdapter
 import com.hfad.mymovies.databinding.FragmentMainBinding
 import com.hfad.mymovies.di.ViewModelFactory
+import com.hfad.mymovies.route.SimpleBottomSheetDialogRoute
+import com.hfad.mymovies.route.dialog.SimpleBottomSheetDialogView
+import com.hfad.mymovies.route.navigator.DialogNavigator
 import com.hfad.mymovies.viewmodels.MainFragmentViewModel
 import javax.inject.Inject
 
@@ -30,6 +33,7 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)[MainFragmentViewModel::class.java]
         movieAdapter = MovieAdapter(this)
         binding.recyclerViewPosters.adapter = movieAdapter
+        binding.button.setOnClickListener { DialogNavigator().show(SimpleBottomSheetDialogRoute(), activity as MainActivity) }
         loadData()
         setCallback()
         setListeners()

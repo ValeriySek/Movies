@@ -19,10 +19,10 @@ import com.squareup.picasso.Picasso
 import java.util.*
 
 class MovieAdapter(private val mFragment: Fragment) : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
-    private var movieList: MutableList<MovieDiscover>? = ArrayList()
+    private var movieList: List<MovieDiscover>? = ArrayList()
     private var onReachEndListener: OnReachEndListener? = null
     fun clear() {
-        movieList!!.clear()
+        movieList = null
         notifyDataSetChanged()
     }
 
@@ -51,7 +51,7 @@ class MovieAdapter(private val mFragment: Fragment) : RecyclerView.Adapter<Movie
         return if (movieList == null) 0 else movieList!!.size
     }
 
-    fun setMovieList(movieList: MutableList<MovieDiscover>) {
+    fun setMovieList(movieList: List<MovieDiscover>) {
         this.movieList = movieList
         Log.i("LoadSearchA", "" + movieList.size)
         notifyDataSetChanged()
@@ -84,9 +84,10 @@ class MovieAdapter(private val mFragment: Fragment) : RecyclerView.Adapter<Movie
         fun bind(movieDiscover: MovieDiscover) {
             binding.itemMovieCard.setOnClickListener(this)
             val url = NetworkUtilsConstants.BASE_POSTER_URL + NetworkUtilsConstants.SMALL_POSTER_SIZE + movieDiscover.posterPath
+            Log.i("TAGG", "${movieDiscover.posterPath}")
             Picasso.get().load(url).into(binding.itemMovieSmallPosterIv)
             binding.itemMovieTitle2Tv.text = movieDiscover.title
-            binding.itemMovieReleaseDateTv.text = movieDiscover.releaseDate.substring(0, 4)
+            binding.itemMovieReleaseDateTv.text = movieDiscover.releaseDate?.substring(0, 4)
             binding.itemMovieRatingBar.rating = movieDiscover.voteAverage.toFloat()
         }
 

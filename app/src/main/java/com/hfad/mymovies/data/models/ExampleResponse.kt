@@ -1,6 +1,5 @@
 package com.hfad.mymovies.data.models
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class ExampleResponse (

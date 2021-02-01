@@ -33,7 +33,7 @@ class DetailFragmentViewModel @Inject constructor(
 //        get() = mFavouriteMovieRepository.isFavourite(mMovieId)
     val actors: LiveData<List<Actors>>
         get() = movieRepository.getActors(movieId, language)
-    val movies: LiveData<MutableList<MovieDiscover>>
+    val movies: LiveData<List<MovieDiscover>>
         get() = movieRepository.getRecommended(1, movieId, language)
 
     //    val favouriteMovie: FavouriteMovie

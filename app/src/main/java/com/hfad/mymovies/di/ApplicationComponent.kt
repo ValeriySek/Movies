@@ -17,5 +17,4 @@ interface ApplicationComponent {
     fun inject(activity: MainActivity)
     fun inject(mainFragment: MainFragment)
     fun inject(detailFragment: DetailFragment)
-
 }

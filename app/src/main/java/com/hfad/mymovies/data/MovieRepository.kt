@@ -24,7 +24,7 @@ class MovieRepository @Inject constructor(
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ exampleResponse ->
-                    if ((mMovieDiscovers.size + 20) / page == 20) mMovieDiscovers.addAll(exampleResponse.results)
+                    if ((mMovieDiscovers.size + 20) / page == 20) exampleResponse.results?.let { mMovieDiscovers.addAll(it) }
                     listMovies.value = mMovieDiscovers
                     Log.i("ProblemMRsize", "" + mMovieDiscovers.size)
                 }) { }
@@ -47,7 +47,7 @@ class MovieRepository @Inject constructor(
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ exampleResponse ->
                     fActors.value = exampleResponse.cast
-                    Log.i("ProblemMRM", "" + exampleResponse.cast.size)
+                    Log.i("ProblemMRM", "" + exampleResponse.cast?.size)
                 }) { }
         return fActors
     }
@@ -59,13 +59,13 @@ class MovieRepository @Inject constructor(
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ exampleResponse ->
                     fMovie.value = exampleResponse.results
-                    Log.i("LoadSearchM", "" + exampleResponse.results.size)
+                    Log.i("LoadSearchM", "" + exampleResponse.results?.size)
                 }) { }
         return fMovie
     }
 
-    fun getRecommended(page: Int, movieId: Int, language: String?): MutableLiveData<MutableList<MovieDiscover>> {
-        val listMovies = MutableLiveData<MutableList<MovieDiscover>>()
+    fun getRecommended(page: Int, movieId: Int, language: String?): MutableLiveData<List<MovieDiscover>> {
+        val listMovies = MutableLiveData<List<MovieDiscover>>()
         apiService.getRecommended(movieId, language, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -82,7 +82,7 @@ class MovieRepository @Inject constructor(
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ exampleResponse ->
-                    if ((mMovieDiscovers.size + 20) / page == 20) mMovieDiscovers.addAll(exampleResponse.results)
+                    if ((mMovieDiscovers.size + 20) / page == 20) exampleResponse.results?.let { mMovieDiscovers.addAll(it) }
                     listMovies.value = mMovieDiscovers
                     Log.i("ProblemMRsize", "" + mMovieDiscovers.size)
                 }) { }
