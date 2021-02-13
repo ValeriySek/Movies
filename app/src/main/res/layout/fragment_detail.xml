@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailFragment"
+    tools:context=".features.details.DetailFragment"
     tools:ignore="MergeRootFrame">
+
+
+    <ImageView
+        android:id="@+id/detail_fragment_poster_bg_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +33,8 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background" />
 
             <TextView
                 android:id="@+id/detail_fragment_title_2_tv"
@@ -179,6 +188,8 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+
 
     <ImageView
         android:id="@+id/detail_fragment_back_arrow_iv"

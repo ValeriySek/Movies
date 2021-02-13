@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/main_fragment"
-        android:name="com.hfad.mymovies.ui.MainFragment"
+        android:name="com.hfad.mymovies.features.main.MainFragment"
         tools:layout="@layout/fragment_main"
         android:label="fragment_main">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/detail_fragment"
-        android:name="com.hfad.mymovies.ui.DetailFragment"
+        android:name="com.hfad.mymovies.features.details.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <argument
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/favourite_fragment"
-        android:name="com.hfad.mymovies.ui.FavouriteFragment"
+        android:name="com.hfad.mymovies.features.favourites.FavouriteFragment"
         android:label="FavouriteFragment"
         tools:layout="@layout/fragment_favourite">
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/search_fragment"
-        android:name="com.hfad.mymovies.ui.SearchFragment"
+        android:name="com.hfad.mymovies.features.search.SearchFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_search" >
         <action

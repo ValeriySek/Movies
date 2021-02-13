@@ -12,9 +12,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/base-feature" />
-            <option value="$PROJECT_DIR$/domain" />
-            <option value="$PROJECT_DIR$/f-movie-details" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
