@@ -1,8 +1,8 @@
 package com.hfad.mymovies
 
 import android.app.Application
-import com.hfad.mymovies.di.ApplicationModule
-import com.hfad.mymovies.di.DaggerApplicationComponent
+import com.hfad.mymovies.core.di.ApplicationModule
+import com.hfad.mymovies.core.di.DaggerApplicationComponent
 
 class Application: Application() {
 
