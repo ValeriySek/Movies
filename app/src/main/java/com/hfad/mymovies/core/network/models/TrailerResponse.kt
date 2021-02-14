@@ -1,6 +1,6 @@
-package com.hfad.mymovies.features.data.models
+package com.hfad.mymovies.core.network.models
 
-class Trailer(
+class TrailerResponse(
         private val key: String? = null,
         private val name: String? = null
 )

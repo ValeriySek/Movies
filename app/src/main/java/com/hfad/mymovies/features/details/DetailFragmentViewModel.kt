@@ -5,11 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hfad.mymovies.core.domain.Actors
+import com.hfad.mymovies.core.domain.MovieDetailed
+import com.hfad.mymovies.core.domain.Movies
+import com.hfad.mymovies.core.domain.Review
 import com.hfad.mymovies.features.data.MovieRepository
-import com.hfad.mymovies.features.data.models.Actors
-import com.hfad.mymovies.features.data.models.Movie
-import com.hfad.mymovies.features.data.models.MovieDiscover
-import com.hfad.mymovies.features.data.models.Review
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,7 +23,7 @@ class DetailFragmentViewModel @Inject constructor(
 
     var movieId: Int = 0
     private val language = Locale.getDefault().language
-    val movie: LiveData<Movie>
+    val movie: LiveData<MovieDetailed>
         get() = movieRepository.getMovie(movieId, language)
 
     var bitmap = MutableLiveData<Bitmap>()
@@ -41,7 +41,7 @@ class DetailFragmentViewModel @Inject constructor(
 //        get() = mFavouriteMovieRepository.isFavourite(mMovieId)
     val actors: LiveData<List<Actors>>
         get() = movieRepository.getActors(movieId, language)
-    val movies: LiveData<List<MovieDiscover>>
+    val movies: LiveData<List<Movies>>
         get() = movieRepository.getRecommended(1, movieId, language)
 
     //    val favouriteMovie: FavouriteMovie

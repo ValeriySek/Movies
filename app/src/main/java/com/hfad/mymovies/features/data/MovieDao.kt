@@ -2,7 +2,7 @@ package com.hfad.mymovies.features.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.hfad.mymovies.features.data.models.FavouriteMovie
+import com.hfad.mymovies.core.network.models.FavouriteMovie
 
 @Dao
 interface MovieDao {

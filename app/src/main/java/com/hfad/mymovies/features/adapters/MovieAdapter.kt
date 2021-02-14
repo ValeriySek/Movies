@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.hfad.mymovies.features.data.models.MovieDiscover
+import com.hfad.mymovies.core.domain.Movies
 import com.hfad.mymovies.databinding.MovieItemBinding
 import com.hfad.mymovies.core.utils.NetworkUtilsConstants
 import com.hfad.mymovies.features.details.DetailFragmentDirections
@@ -19,7 +19,7 @@ import com.squareup.picasso.Picasso
 import java.util.*
 
 class MovieAdapter(private val mFragment: Fragment) : RecyclerView.Adapter<MovieAdapter.MovieHolder>() {
-    private var movieList: List<MovieDiscover>? = ArrayList()
+    private var movieList: List<Movies>? = ArrayList()
     private var onReachEndListener: OnReachEndListener? = null
     fun clear() {
         movieList = null
@@ -51,7 +51,7 @@ class MovieAdapter(private val mFragment: Fragment) : RecyclerView.Adapter<Movie
         return if (movieList == null) 0 else movieList!!.size
     }
 
-    fun setMovieList(movieList: List<MovieDiscover>) {
+    fun setMovieList(movieList: List<Movies>) {
         this.movieList = movieList
         Log.i("LoadSearchA", "" + movieList.size)
         notifyDataSetChanged()
@@ -81,7 +81,7 @@ class MovieAdapter(private val mFragment: Fragment) : RecyclerView.Adapter<Movie
             }
         }
 
-        fun bind(movieDiscover: MovieDiscover) {
+        fun bind(movieDiscover: Movies) {
             binding.itemMovieCard.setOnClickListener(this)
             val url = NetworkUtilsConstants.BASE_POSTER_URL + NetworkUtilsConstants.SMALL_POSTER_SIZE + movieDiscover.posterPath
             Log.i("TAGG", "${movieDiscover.posterPath}")

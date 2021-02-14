@@ -3,8 +3,8 @@ package com.hfad.mymovies.features.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hfad.mymovies.core.domain.Actors
 import com.hfad.mymovies.features.adapters.CastAdapter.CastHolder
-import com.hfad.mymovies.features.data.models.Actors
 import com.hfad.mymovies.databinding.ActorItemBinding
 import java.util.*
 

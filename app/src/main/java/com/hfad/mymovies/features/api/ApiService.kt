@@ -1,8 +1,8 @@
 package com.hfad.mymovies.features.api
 
-import com.hfad.mymovies.features.data.models.ExampleResponse
-import com.hfad.mymovies.features.data.models.ExampleReview
-import com.hfad.mymovies.features.data.models.Movie
+import com.hfad.mymovies.core.network.models.ExampleResponse
+import com.hfad.mymovies.core.network.models.ReviewsResponse
+import com.hfad.mymovies.core.network.models.MovieDetailedResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -22,7 +22,7 @@ interface ApiService {
     fun getExampleMovie(
             @Path("movie_id") movieId: Int,
             @Query("language") language: String?
-    ): Observable<Movie>
+    ): Observable<MovieDetailedResponse>
 
     @GET("movie/{movie_id}/credits?$API_KEY")
     fun getCast(
@@ -53,5 +53,5 @@ interface ApiService {
     fun getReviews(
             @Path("movie_id") movieId: Int,
             @Query("language") language: String?
-    ): Observable<ExampleReview>
+    ): Observable<ReviewsResponse>
 }

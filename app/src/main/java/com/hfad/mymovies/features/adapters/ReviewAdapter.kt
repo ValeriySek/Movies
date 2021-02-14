@@ -3,8 +3,8 @@ package com.hfad.mymovies.features.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hfad.mymovies.core.domain.Review
 import com.hfad.mymovies.features.adapters.ReviewAdapter.ReviewViewHolder
-import com.hfad.mymovies.features.data.models.Review
 import com.hfad.mymovies.databinding.ReviewItemBinding
 import java.util.*
 

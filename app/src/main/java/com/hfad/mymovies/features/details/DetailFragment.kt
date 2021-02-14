@@ -5,17 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.palette.graphics.Palette
-import androidx.viewbinding.ViewBinding
-import com.hfad.mymovies.Application
-import com.hfad.mymovies.features.MainActivity
 import com.hfad.mymovies.features.adapters.CastAdapter
 import com.hfad.mymovies.features.adapters.MovieAdapter
 import com.hfad.mymovies.features.adapters.ReviewAdapter
-import com.hfad.mymovies.features.data.models.Movie
+import com.hfad.mymovies.core.network.models.MovieDetailedResponse
 import com.hfad.mymovies.databinding.FragmentDetailBinding
 import com.hfad.mymovies.core.di.ViewModelFactory
 import com.hfad.mymovies.core.platform.BaseFragment
@@ -162,7 +158,7 @@ class DetailFragment : BaseFragment() {
     }
 
     interface Callback {
-        fun addOrDelete(movie: Movie?, isFavourite: Boolean)
+        fun addOrDelete(movie: MovieDetailedResponse?, isFavourite: Boolean)
     }
 
     override fun onDestroyView() {

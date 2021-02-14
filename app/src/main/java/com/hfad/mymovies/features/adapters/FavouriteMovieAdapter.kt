@@ -4,7 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.hfad.mymovies.features.data.models.FavouriteMovie
+import com.hfad.mymovies.core.network.models.FavouriteMovie
 import com.hfad.mymovies.databinding.FavouriteMovieItemBinding
 import com.hfad.mymovies.core.utils.NetworkUtilsConstants
 import com.squareup.picasso.Picasso

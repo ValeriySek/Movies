@@ -6,10 +6,10 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.hfad.mymovies.features.data.models.FavouriteMovie;
-import com.hfad.mymovies.features.data.models.MovieDiscover;
+import com.hfad.mymovies.core.network.models.FavouriteMovie;
+import com.hfad.mymovies.core.network.models.MoviesResponse;
 
-@Database(entities = {MovieDiscover.class, FavouriteMovie.class}, version = 9, exportSchema = false)
+@Database(entities = {MoviesResponse.class, FavouriteMovie.class}, version = 9, exportSchema = false)
 public abstract class MovieDatabase extends RoomDatabase {
     private static final String DB_NAME = "movies.db";
 
