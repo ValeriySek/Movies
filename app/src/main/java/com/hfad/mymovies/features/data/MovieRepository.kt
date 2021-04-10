@@ -19,21 +19,6 @@ class MovieRepository @Inject constructor(
 
     private val mMovieDiscovers: MutableList<Movies> = ArrayList()
 
-    fun getMovies(page: Int, sortBy: String?, language: String?): MutableLiveData<MutableList<Movies>> {
-        val listMovies = MutableLiveData<MutableList<Movies>>()
-        apiService.getExample(language, page, sortBy, 100)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ exampleResponse ->
-                    if ((mMovieDiscovers.size + 20) / page == 20) {
-                        exampleResponse.results?.let { mMovieDiscovers.addAll(it.transform()) }
-                    }
-                    listMovies.value = mMovieDiscovers
-                    Log.i("ProblemMRsize", "" + mMovieDiscovers.size)
-                }) { }
-        return listMovies
-    }
-
     fun getMovie(movieId: Int, language: String?): LiveData<MovieDetailed> {
         val fMovie = MutableLiveData<MovieDetailed>()
         apiService.getExampleMovie(movieId, language)
@@ -79,8 +64,8 @@ class MovieRepository @Inject constructor(
         return listMovies
     }
 
-    fun getUpcomingMovies(page: Int, language: String?): MutableLiveData<MutableList<Movies>> {
-        val listMovies = MutableLiveData<MutableList<Movies>>()
+    fun getUpcomingMovies(page: Int, language: String?): MutableLiveData<List<Movies>> {
+        val listMovies = MutableLiveData<List<Movies>>()
         apiService.getUpcoming(language, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

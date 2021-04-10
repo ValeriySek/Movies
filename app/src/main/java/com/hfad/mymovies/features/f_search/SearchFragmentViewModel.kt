@@ -1,4 +1,4 @@
-package com.hfad.mymovies.features.search
+package com.hfad.mymovies.features.f_search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

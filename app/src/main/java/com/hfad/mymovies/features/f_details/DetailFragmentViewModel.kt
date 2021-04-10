@@ -1,4 +1,4 @@
-package com.hfad.mymovies.features.details
+package com.hfad.mymovies.features.f_details
 
 import android.graphics.Bitmap
 import androidx.lifecycle.LiveData

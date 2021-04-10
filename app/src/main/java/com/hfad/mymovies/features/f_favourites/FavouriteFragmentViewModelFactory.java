@@ -1,4 +1,4 @@
-package com.hfad.mymovies.features.favourites;
+package com.hfad.mymovies.features.f_favourites;
 
 //import com.hfad.mymovies.data.FavouriteMovieRepository;
 

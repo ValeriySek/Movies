@@ -1,4 +1,4 @@
-package com.hfad.mymovies.features.main;
+package com.hfad.mymovies.features.f_main;
 
 //public class MainFragmentViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 //

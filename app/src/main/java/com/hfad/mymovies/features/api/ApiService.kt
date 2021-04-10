@@ -1,5 +1,6 @@
 package com.hfad.mymovies.features.api
 
+import com.hfad.mymovies.core.interactor.API_KEY
 import com.hfad.mymovies.core.network.models.ExampleResponse
 import com.hfad.mymovies.core.network.models.ReviewsResponse
 import com.hfad.mymovies.core.network.models.MovieDetailedResponse
@@ -8,15 +9,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-const val API_KEY = "api_key=756d1951529fd2f2bc0df1846271d514"
 interface ApiService {
-    @GET("discover/movie?$API_KEY&include_adult=false&include_video=false}")
-    fun getExample(
-            @Query("language") language: String?,
-            @Query("page") page: Int,
-            @Query("sort_by") sort: String?,
-            @Query("vote_count.gte") count: Int
-    ): Observable<ExampleResponse>
+
 
     @GET("movie/{movie_id}?$API_KEY")
     fun getExampleMovie(

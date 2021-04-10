@@ -1,12 +1,10 @@
-package com.hfad.mymovies.features.main
+package com.hfad.mymovies.features.f_main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.hfad.mymovies.Application
 import com.hfad.mymovies.features.MainActivity
 import com.hfad.mymovies.features.adapters.MovieAdapter
 import com.hfad.mymovies.databinding.FragmentMainBinding
@@ -69,10 +67,11 @@ class MainFragment : BaseFragment() {
                 loadData()
             }
         })
+        viewModel.movieList.observe(viewLifecycleOwner, { movieDiscovers -> movieAdapter.setMovieList(movieDiscovers) })
     }
 
     private fun loadData() {
-        viewModel.movieList.observe(viewLifecycleOwner, { movieDiscovers -> movieAdapter.setMovieList(movieDiscovers) })
+        viewModel.getMovies()
     }
 
     interface Callback {

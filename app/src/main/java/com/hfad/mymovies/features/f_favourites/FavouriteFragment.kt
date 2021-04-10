@@ -1,10 +1,9 @@
-package com.hfad.mymovies.features.favourites
+package com.hfad.mymovies.features.f_favourites
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.hfad.mymovies.core.platform.BaseFragment
 import com.hfad.mymovies.features.adapters.FavouriteMovieAdapter

@@ -1,4 +1,4 @@
-package com.hfad.mymovies.features.search
+package com.hfad.mymovies.features.f_search
 
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.hfad.mymovies.core.di.ViewModelFactory

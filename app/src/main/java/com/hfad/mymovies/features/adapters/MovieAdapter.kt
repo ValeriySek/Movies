@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hfad.mymovies.core.domain.Movies
 import com.hfad.mymovies.databinding.MovieItemBinding
 import com.hfad.mymovies.core.utils.NetworkUtilsConstants
-import com.hfad.mymovies.features.details.DetailFragmentDirections
-import com.hfad.mymovies.features.favourites.FavouriteFragmentDirections
-import com.hfad.mymovies.features.main.MainFragmentDirections
-import com.hfad.mymovies.features.search.SearchFragmentDirections
+import com.hfad.mymovies.features.f_details.DetailFragmentDirections
+import com.hfad.mymovies.features.f_favourites.FavouriteFragmentDirections
+import com.hfad.mymovies.features.f_main.MainFragmentDirections
+import com.hfad.mymovies.features.f_search.SearchFragmentDirections
 import com.squareup.picasso.Picasso
 import java.util.*
 
